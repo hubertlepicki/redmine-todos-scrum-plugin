@@ -11,7 +11,9 @@
   #end
   map.resources :todos, :name_prefix => 'project_', :path_prefix => '/projects/:project_id',
     :member => {:toggle_complete => :post }, :collection => {:sort => :post}
-  
+ 
+  map.resources :todos, :name_prefix => 'user_', :path_prefix => '/users/:user_id', :controller => :mytodos,
+    :member => {:toggle_complete => :post }, :collection => {:sort => :post} 
   #map.resources :mytodos, :name_prefix => 'project_', :path_prefix => '/projects/:project_id'
   
 
