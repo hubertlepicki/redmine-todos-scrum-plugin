@@ -66,7 +66,7 @@ class TodosController < ApplicationController
   def new
     @todo = parent_object.todos.new
     @todo.parent_id = parent_object.todos.find(params[:parent_id]).id
-    @todo.refers_to = Issue.find(params[:issue_id]).id unless params[:issue_id].blank?
+    @todo.refers_to = Issue.find(params[:issue_id]) unless params[:issue_id].blank?
     @todo.assigned_to = User.current
     
     #@todo.todoable = parent_object
